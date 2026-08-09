@@ -3,7 +3,7 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 13px;
-    color:#515076;
+    color: #515076;
 }
 
 .title {
@@ -12,10 +12,10 @@ body {
     line-height: 78px;
     margin: 0;
     text-align: center;
-    color:#515076;
+    color: #515076;
 }
 
-.product-list{
+.producty-list{
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -25,7 +25,7 @@ body {
     font-size: 12px;
     line-height: 24px;
     margin-top: 20px;
-    color: #A5A3B9
+    color: #A5A3B9;
 }
 
 .card-background{
