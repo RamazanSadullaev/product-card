@@ -126,3 +126,13 @@ padding-top: 1px;
     width: 340px;
 
 }
+
+/* button.css */
+
+.button{
+    background-color: blueviolet;
+}
+
+.button__orange{
+    background-color: orange;
+}
