@@ -32,11 +32,11 @@ googlePageButton.addEventListener('click', () => {
 
 // Вывод консоль лог и ALERT
 
-const ConsoleButton = document.querySelector('#console-log-button')
+const consoleButton = document.querySelector('#console-log-button')
 
-ConsoleButton.addEventListener('click', () => ConsoleLogButton('ДЗ №6'))
+consoleButton.addEventListener('click', () => consoleLogButton('ДЗ №6'))
 
-function ConsoleLogButton(message) {
+function consoleLogButton(message) {
     alert ('ДЗ №6')
     console.log(message)
 }
@@ -51,7 +51,7 @@ title.addEventListener('mouseover', function () {
 
 // Покраска кнопки
 
-const colorButton= document.querySelector('#color-button')
+const colorButton = document.querySelector('#color-button')
 
 colorButton.addEventListener('click', () => {
     colorButton.classList.toggle('button__orange')
