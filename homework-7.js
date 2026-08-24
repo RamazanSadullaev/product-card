@@ -24,7 +24,7 @@ const product = "Книга"
 const price = 450
 
 function buyProduct(budget) {
-  if (budget > price) {
+  if (budget >= price) {
     console.log(`${product} приобретён. Спасибо за покупку!`);
   } else {
     const difference = price - budget;
@@ -39,8 +39,8 @@ const name = "Рамазан";
 const surname = "Садуллаев";
 const age = 24;
 
-function student() {
+function student(name, surname, age) {
   console.log(`Имя: ${name}, фамилия: ${surname}, возраст: ${age},`);
 }
 
-student()
+student(name, surname, age)
