@@ -19,18 +19,17 @@ const myCar = {
     gearbox: "machine",
 };
 
-const me = {...myData,...myCar}
+myCar.owner = myData
+
+console.log(myCar);
 
 //5:Добавление свойства ""максимальная скорость" к объекту авто
 function checkSpeed(car) {
     if (!("maxSpeed" in car)) {
         car["maxSpeed"] = 250;
     }
+    console.log(myCar)
 }
-
-checkSpeed(me);
-
-console.log(me);
 
 //6:Объект - свойство объекта
 const user = {
@@ -73,45 +72,45 @@ const book = [
 ]
 
 book.push({
-        name: "Мастер и Маргарита",
-        author: "Михаил Булгаков",
-        year: 1967,
-        color: "чёрный",
-        genre: "роман",
-    })
+    name: "Мастер и Маргарита",
+    author: "Михаил Булгаков",
+    year: 1967,
+    color: "чёрный",
+    genre: "роман",
+})
 
 //9:Массив с книгами Гарри Поттер
 const bookHarryPotter = [
     {
-    name: "Философский камень",
-    author: "Дж. К. Роулинг",
-    year: 1997,
-    color: "красный",
-    genre: "фэнтези"
+        name: "Философский камень",
+        author: "Дж. К. Роулинг",
+        year: 1997,
+        color: "красный",
+        genre: "фэнтези"
     },
     {
-    name: "Тайная комната",
-    author: "Дж. К. Роулинг",
-    year: 1998,
-    color: "зелёный",
-    genre: "фэнтези"
+        name: "Тайная комната",
+        author: "Дж. К. Роулинг",
+        year: 1998,
+        color: "зелёный",
+        genre: "фэнтези"
     },
     {
-    name: "Узник Азкабана",
-    author: "Дж. К. Роулинг",
-    year: 1999,
-    color: "синий",
-    genre: "фэнтези"
+        name: "Узник Азкабана",
+        author: "Дж. К. Роулинг",
+        year: 1999,
+        color: "синий",
+        genre: "фэнтези"
     }
 ]
 
-const allBooks = [...book,...bookHarryPotter];
+const allBooks = [...book, ...bookHarryPotter];
 
 //10:Добавление свойства isRare
 function addingNewObjectProperty(allBooks) {
     return allBooks.map(book => {
-    book.isRare = book.year > 2000;
-    return book;
+        book.isRare = book.year > 2000;
+        return book;
     });
 }
 
