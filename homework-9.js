@@ -7,9 +7,16 @@ console.log(newArray);
 //2
 const fruits = ["Яблоко", "Вишня", "Персик", "Арбуз", "Дыня"];
 
-const hasWatermelon = fruits.includes("Арбуз");
+function checkFruit(fruit) {
+    if (typeof fruit === "string") {
+        return fruits.includes(fruit);
+    }
+    return "Некорректные входные параметры";
+}
 
-console.log(hasWatermelon);
+console.log(checkFruit("Арбуз"));
+console.log(checkFruit(123));
+console.log(checkFruit("Банан"));
 
 //3
 function reverseArray(array) {
