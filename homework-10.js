@@ -1,5 +1,6 @@
 import { products } from "./products.js";
 
+const PATH = /images/
 const productCardTemplate = document.querySelector("#product-card-template");
 const productList = document.querySelector(".products");
 
@@ -13,7 +14,7 @@ function createProductCard(product) {
   const compound = card.querySelectorAll(".compound__list li");
   const price = card.querySelector(".card__price span");
 
-  image.src = product.image;
+  image.src = PATH + product.image;
   image.alt = product.name;
 
   category.textContent = product.category;
@@ -63,4 +64,4 @@ const productsDescriptions = products.reduce((acc, product) => {
   return acc;
 }, []);
 
-console.log(productsDescriptions);
+console.log(productsDescriptions)
