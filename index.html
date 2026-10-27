@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <button id="registration">Регестрация</button>
     <button id="card-color-button">Сменить цвет карточки</button>
     <button id="cards-color-button">Сменить цвет всем карточкам</button>
     <button id="google-page-button">Открыть Google.com</button>
@@ -33,7 +34,6 @@
                 <h2 class="card__name"></h2>
                 <p class="card__description"></p>
 
-
                 <div class="card__compound compound">
                     <span class="compound__name">Состав:</span>
                     <ul class="compound__list">
@@ -49,12 +49,142 @@
                 </div>
             </li>
         </template>
+    </div>
 
-        <script src="main.js"></script>
-        <script src="homework-7.js"></script>
-        <script src="homework-8.js"></script>
-        <script type="module" src="homework-9.js"></script>
-        <script type="module" src="homework-10.js"></script>
+    <footer class="footer">
+        <div class="footer__about">
+            <h2 class="footer__title">Product Cards</h2>
+            <p class="footer__description">
+                У нас самые лучшие продукты для кожи!
+            </p>
+            <div class="footer__socials">
+                <a href="https://t.me" class="footer__social-link">
+                    <img src="images/img:telegram.png" alt="Telegram">
+                </a>
+                <a href="https://vk.com" class="footer__social-link">
+                    <img src="images/img:vk.png" alt="vk">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer__subscribe">
+            <form class="subscribe-form" id="subscribe-form">
+                <h2 class="subscribe-form__title">
+                    Подпишись на наши акции:
+                </h2>
+                <label for="email" class="subscribe-form__label">
+                </label>
+                <input id="email" class="subscribe-form__input" type="email" name="email"
+                    placeholder="Введите ваш e-mail" required>
+                <button class="subscribe-form__button" type="submit">
+                    Подписаться
+                </button>
+            </form>
+        </div>
+
+        <nav class="footer__nav">
+            <h2 class="footer__nav-title">
+                Быстрые ссылки
+            </h2>
+            <ul class="footer__nav-list">
+                <li class="footer__nav-item">
+                    <a href="#" class="footer__nav-link">
+                        Главная
+                    </a>
+                </li>
+                <li class="footer__nav-item">
+                    <a href="#" class="footer__nav-link">
+                        Магазин
+                    </a>
+                </li>
+                <li class="footer__nav-item">
+                    <a href="#" class="footer__nav-link">
+                        Контакты
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">
+                www.product-cards.com © all right reserved.
+            </p>
+        </div>
+    </footer>
+
+    <div class="overlay"></div>
+
+    <div class="modal" id="registration-modal">
+        <button class="modal__close" type="button">x</button>
+
+        <h2 class="modal__title">Регистрация</h2>
+
+        <form id="registration_form" novalidate>
+
+            <label for="first-name">Имя</label>
+            <input
+            type="text"
+            id="first-name"
+            name="firstName"
+            placeholder="Введите имя"
+            required
+            >
+
+            <label for="last-name">Фамилия</label>
+            <input
+            type="text"
+            id="last-name"
+            name="lastName"
+            placeholder="Введите фамилию"
+            required
+            >
+
+            <label for="birth-date">Дата рождения</label>
+            <input
+            type="date"
+            id="birth-date"
+            name="birthDate"
+            required
+            >
+
+            <label for="login">Логин</label>
+            <input
+            type="text"
+            id="login"
+            name="login"
+            placeholder="Придумайте логин"
+            required
+            >
+
+            <label for="password">Пароль</label>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Введите пароль"
+            required
+        >
+
+            <label for="confirm-password">Повторите пароль</label>
+            <input
+            type="password"
+            id="confirm-password"
+            name="confirmPassword"
+            placeholder="Повторите пароль"
+            required
+            >
+
+            <button type="submit">Зарегистрироваться</button>
+
+        </form>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="homework-7.js"></script>
+    <script src="homework-8.js"></script>
+    <script type="module" src="homework-9.js"></script>
+    <script type="module" src="homework-10.js"></script>
+    <script type="module" src="homework-11.js"></script>
 </body>
 
 </html>
