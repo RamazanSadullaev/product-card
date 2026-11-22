@@ -1,44 +1,41 @@
-const form = document.querySelector("#subscribe-form");
-const emailInput = document.querySelector("#email");
+import Modal from "./Modal.js"
+import Form from "./Form.js"
 
+const subscribeForm = new Form("subscribe-form");
 
-form.addEventListener("submit", (event) => {
+subscribeForm.form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const email = emailInput.value;
+    if(!subscribeForm.isValid()) {
+        subscribeForm.form.reportValidity();
+        return;
+    }
 
-    console.log({
-      email: email
-    });
-});
+    const values = subscribeForm.getValues();
 
-const registrationButton = document.querySelector("#registration");
-const modal = document.querySelector("#registration-modal");
-const overlay = document.querySelector(".overlay")
-const closeButton = document.querySelector(".modal__close")
+    console.log (values);
 
-registrationButton.addEventListener("click", () => {
-    console.log("Кнопка регистрации нажата!");
-
-    modal.classList.add("modal-showed");
-    overlay.classList.add("overlay-showed");
+    subscribeForm.reset();
 })
 
-closeButton.addEventListener("click", () => {
-    modal.classList.remove("modal-showed");
-    overlay.classList.remove("overlay-showed");
+const registrationButton = document.querySelector("#registration");
+const registrationModal = new Modal("registration-modal");
+
+registrationButton.addEventListener("click", () => {
+    registrationModal.open();
+    
 });
 
-const registrationForm =  document.querySelector(".modal form");
+const registrationForm =  new Form("registration-form");
 const passwordInput = document.querySelector("#password");
 const confirmPasswordInput = document.querySelector("#confirm-password");
 
 let user;
 
-registrationForm.addEventListener("submit", (event) => {
+registrationForm.form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if (!registrationForm.checkValidity()) {
+    if (!registrationForm.isValid()) {
         alert("Регистрация отклонена! Заполните все поля.");
         return;
     }
@@ -48,18 +45,16 @@ registrationForm.addEventListener("submit", (event) => {
         return;
     }
 
+    const values = registrationForm.getValues();
+
     user = {
-        firstNaame: document.querySelector("#first-name").value,
-        lastName: document.querySelector("#last-name").value,
-        birthDate: document.querySelector("#birth-date").value,
-        login: document.querySelector("#login").value,
-        password: passwordInput.value,
-        confirmPassword: confirmPasswordInput.value,
+        ...values,
         createdOn: new Date()
     };
 
     console.log(user);
 
-    modal.classList.remove("modal-showed");
-    overlay.classList.remove("overlay-showed");
+    registrationForm.reset();
+
+registrationModal.close();
 });
