@@ -1,3 +1,10 @@
+import "./homework-7.js";
+import "./homework-8.js";
+import "./homework-9.js";
+import "./homework-10.js";
+import "./homework-11.js";
+import "./beauty-products.js"
+
 // Покраска первой карточки
 const productCard = document.querySelector('.card')
 const cardColorButton = document.querySelector('#card-color-button')
